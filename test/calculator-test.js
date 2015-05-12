@@ -7,6 +7,14 @@ describe('Calculator', function() {
   });
 
   describe('Adding', function() {
+
+    it('should filter the input', function () {
+      var filterSpy = sinon.spy(this.calculator, '_filter');
+      this.calculator.add(2, 5);
+      expect(filterSpy).to.have.been.called;
+      filterSpy.restore();
+    });
+
     it('should throw an error if a non-numeric value is used', function () {
       expect(this.calculator.add.bind(this.calculator, 2, 'a')).to.throw();
     });
