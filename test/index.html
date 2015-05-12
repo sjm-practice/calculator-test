@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Mocha tests in the browser use unicode symbols for bullet points -->
+  <meta charset='utf-8'>
+  <link rel="stylesheet" type="text/css" href="../node_modules/grunt-blanket-mocha/node_modules/mocha/mocha.css">
+  <title>Calculator Test</title>
+</head>
+<body>
+  <!-- Mocha inserts test results -->
+  <div id='mocha'></div>
+
+  <!-- Offscreen location for fixtures (to not cover test results) -->
+  <div id='test' style='position: fixed; top: 0; left: -99999px;'></div>
+
+  <!-- Testing dependencies -->
+  <script type="text/javascript" src='../node_modules/chai/chai.js'></script>
+  <script type="text/javascript" src='../node_modules/sinon-chai/lib/sinon-chai.js'></script>
+  <script type="text/javascript" src='../node_modules/sinon/pkg/sinon.js'></script>
+  <script type="text/javascript" src='../node_modules/grunt-blanket-mocha/node_modules/mocha/mocha.js'></script>
+  <script type="text/javascript" src='../node_modules/grunt-blanket-mocha/node_modules/blanket/dist/mocha/blanket_mocha.js'></script>
+  <script type="text/javascript" src='../node_modules/grunt-blanket-mocha/support/mocha-blanket.js'></script>
+
+  <!-- Set Mocha BDD style assertions -->
+  <script type="text/javascript">mocha.setup('bdd');</script>
+
+  <!-- Source file to test -->
+  <script type="text/javascript" src="../js/calculator.js" data-cover></script>
+
+  <!-- Test Suite -->
+  <script type="text/javascript" src="calculator-test.js"></script>
+
+  <script type="text/javascript">
+  // if test is run mocha cli (PHANTOMJS), use a reporter
+  if (window.PHANTOMJS) {
+    blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+  } else {
+    mocha.run();
+  }
+  </script>
+</body>
+</html>
