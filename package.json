@@ -14,9 +14,10 @@
     "mocha",
     "chai",
     "sinon",
+    "grunt",
     "karma"
   ],
-  "author": "Steve (via Sean testing tutorial)",
+  "author": "Steve (via sean.is testing blog/tutorial)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sjm-practice/calculator-test/issues"

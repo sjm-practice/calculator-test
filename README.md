@@ -1,5 +1,5 @@
 # calculator-test
-This is a simple client side calculator, used for practicing testing client side javascript (with mocha, chai, sinon, karma).
+This is a simple client side calculator, used for practicing testing client side javascript (with mocha, chai, sinon, karma, grunt).
 
 
 ## Usage
