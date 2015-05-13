@@ -1,5 +1,18 @@
 var expect = chai.expect;
 
+// A polyfill to support running these test via grunt / mocha cli
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function () {
+    var fn = this,
+      args = Array.prototype.slice.call(arguments),
+      context = args.shift();
+
+    return function () {
+      fn.apply(context, args);
+    };
+  };
+}
+
 describe('Calculator', function() {
 
   before(function () {
