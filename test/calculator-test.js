@@ -16,6 +16,11 @@ if (!Function.prototype.bind) {
 describe('Calculator', function() {
 
   before(function () {
+    // if being run from Karma, inject the html test fixture in to the document body
+    if (window.__html__) {
+      document.body.innerHTML = window.__html__['test/index.html'];
+    }
+
     this.calculator = new Calculator();
   });
 
