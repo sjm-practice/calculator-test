@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 
       dev: {
         // local testing, test all / main browser environments
-        browsers: ['Safari', 'PhantomJS']
+        browsers: ['Chrome', 'Safari', 'PhantomJS']
       },
 
       prod: {
